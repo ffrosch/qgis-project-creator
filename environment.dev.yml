@@ -1,0 +1,14 @@
+name: qgis-project-creator-dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.3
+  - pip=24.0.*
+  - qgis=3.34.4 # LTR version
+  - pip:
+      - build==1.2.1
+      - qgis-stubs==0.2.0.post1
+variables:
+  PYTHONPATH: ${CONDA_PREFIX}/share/qgis/python
+  QT_QPA_PLATFORM: xcb # Make sure to run QGIS with X11 instead of Wayland
