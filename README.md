@@ -6,6 +6,8 @@
     - [Linux with conda](#linux-with-conda)
   - [Development](#development)
     - [Build](#build)
+    - [Publish](#publish)
+      - [Publish to TestPyPI](#publish-to-testpypi)
     - [Style guide](#style-guide)
       - [Commits](#commits)
       - [Changelog](#changelog)
@@ -77,6 +79,18 @@ conda env update -f environment.dev.yml --prune
 
 ```shell
 python -m build
+```
+
+### Publish
+
+Save the token to `~/.pypirc`.
+
+#### Publish to TestPyPI
+
+Save the token under `[testpypi]` and run:
+
+```shell
+twine upload --repository testpypi dist/*
 ```
 
 ### Style guide
