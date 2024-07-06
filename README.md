@@ -19,14 +19,11 @@ Python needs to know the path to the QGIS Python API, which can be set with the 
 export PYTHONPATH=/path/to/qgis/python
 ```
 
-The preferred way to use this package is with `conda`, because it's possible to also install a specific version of QGIS with conda.
+The preferred way to use this package is with `conda`, because it's possible to also install a specific version of QGIS with conda and the `PYTHONPATH` environment variable is set automatically by `qgis` from `conda-forge`.
 
 ```bash
 CONDA_ENV=<your-env-name>
 conda activate ${CONDA_ENV}
-export PYTHONPATH=${CONDA_PREFIX}/share/qgis/python
-# Print the path OS agnostic:
-# python -c "import os; print(os.environ['CONDA_PREFIX'] + '/share/qgis/python')"
 ```
 
 ## Installation
@@ -43,16 +40,7 @@ Preferred way to use this package, because you are free to use whichever version
 
 ```bash
 export CONDA_ENV=<your-env-name>
-# make sure conda version is >=4.9- [Python QGIS Project Creator](#python-qgis-project-creator)
-  - [Usage](#usage)
-  - [Installation](#installation)
-    - [Linux with `conda`](#linux-with-conda)
-  - [Development](#development)
-    - [Build](#build)
-    - [Style guide](#style-guide)
-      - [Commits](#commits)
-      - [Changelog](#changelog)
-
+# make sure conda version is >=4.9
 # conda --version
 # conda update conda
 # add conda-forge as the highest priority channel
@@ -60,12 +48,10 @@ conda config --add channels conda-forge
 # Strict channel priority can dramatically speed up conda operations and also reduce package incompatibility problems
 conda config --set channel_priority strict
 # Create your environment
-conda create -n ${CONDA_ENV} python=3.12 qgis=3.34
+conda create -n ${CONDA_ENV} python=3.12.3 qgis=3.34
 conda activate ${CONDA_ENV}
 conda install pip
 pip install qgis-project-creator qgis-stubs
-# For convenience the `PYTHONPATH` environment variable should be set:
-conda env config vars set PYTHONPATH=${CONDA_PREFIX}/share/qgis/python
 # Set on KDE Plasma 6 with Wayland to run QGIS with the X11 backend:
 conda env config vars set QT_QPA_PLATFORM=xcb
 # reactivate the environment for changes to take effect
