@@ -3,7 +3,7 @@
 - [Python QGIS Project Creator](#python-qgis-project-creator)
   - [Usage](#usage)
   - [Installation](#installation)
-    - [Linux with `conda`](#linux-with-conda)
+    - [Linux with conda](#linux-with-conda)
   - [Development](#development)
     - [Build](#build)
     - [Style guide](#style-guide)
@@ -15,13 +15,13 @@
 QGIS has to be installed on the system and needs to support Python 3.12 (e.g. QGIS 3.34 or newer).
 Python needs to know the path to the QGIS Python API, which can be set with the `PYTHONPATH` environment variable.
 
-```bash
+```shell
 export PYTHONPATH=/path/to/qgis/python
 ```
 
 The preferred way to use this package is with `conda`, because it's possible to also install a specific version of QGIS with conda and the `PYTHONPATH` environment variable is set automatically by `qgis` from `conda-forge`.
 
-```bash
+```shell
 CONDA_ENV=<your-env-name>
 conda activate ${CONDA_ENV}
 ```
@@ -30,15 +30,15 @@ conda activate ${CONDA_ENV}
 
 The package itself is installed with `pip`:
 
-```bash
+```shell
 pip install qgis-project-creator
 ```
 
-### Linux with `conda`
+### Linux with conda
 
 Preferred way to use this package, because you are free to use whichever version of QGIS you want.
 
-```bash
+```shell
 export CONDA_ENV=<your-env-name>
 # make sure conda version is >=4.9
 # conda --version
@@ -62,20 +62,20 @@ conda activate ${CONDA_ENV}
 
 Use the conda environment from `environment.dev.yml`:
 
-```bash
+```shell
 conda env create -f environment.dev.yml
 conda activate qgis-project-creator-dev
 ```
 
 Changes to the environment should be defined in `environment.dev.yml` and then applied with:
 
-```bash
+```shell
 conda env update -f environment.dev.yml --prune
 ```
 
 ### Build
 
-```bash
+```shell
 python -m build
 ```
 
