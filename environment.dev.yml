@@ -3,10 +3,12 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - geoalchemy2=0.15.1
   # Jupyter Notebook helps tremendously with quickly testing functionality
   - ipykernel
   - python=3.12.3
   - pip=24.0.*
+  - sqlalchemy=2.0.31
   - qgis=3.34.4 # LTR version
   - twine=5.1.1
   - pip:

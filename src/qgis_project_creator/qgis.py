@@ -97,3 +97,7 @@ class Metadata:
 class Settings:
     epsg: int
     project_home: str | Path
+
+
+class Widget:
+    name = "Widget class, needs to be implemented."
